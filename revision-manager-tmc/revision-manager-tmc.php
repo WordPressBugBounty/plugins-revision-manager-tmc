@@ -3,7 +3,7 @@
 Plugin Name:        Revision Manager TMC
 Description:        Clone your post, page or custom post type to a draft. Draft up revisions of live, published content.
 Tags:               revisions, revisionize, admin, wiki, accept, revision, revisionary, revision control, revision, manager, notify, draft manager, authors reviser, admin, post, revisions, permissions, post permit, submit changes
-Version:            2.8.20
+Version:            2.8.21
 Requires at least:  6.0.0
 Requires PHP:       7.1
 Author:             JetPlugs.com
@@ -35,7 +35,7 @@ use tmc\revisionmanager\src\App;    //  Namespace import.
 //  ShellPress
 //  ----------------------------------------
 
-App::initShellPress( __FILE__, 'rm_tmc', '2.8.20', 'plugin' );
+App::initShellPress( __FILE__, 'rm_tmc', '2.8.21', 'plugin' );
 
 //  ----------------------------------------
 //  Public methods

@@ -3,9 +3,9 @@ Contributors: themastercut
 Donate Link: http://jetplugs.com
 Tags: revision, revisionary, revision control, revision manager, clone post
 Requires at least: 6.0.0
-Tested up to: 6.6.1
+Tested up to: 6.7.1
 Requires PHP: 7.1
-Stable tag: 2.8.20
+Stable tag: 2.8.21
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -175,6 +175,10 @@ Since version 2.4.3 we provide better support for Revision Manager TMC. We added
 NEW! Support section - we add system info dump for rapid environment testing. When you need help, you can simple send us system info.
 
 == Changelog ==
+
+= 2.8.21 =
+Version bump.
+Refactor: WordPress textdomain fix.
 
 = 2.8.20 =
 Fix: Public action vulnerability.

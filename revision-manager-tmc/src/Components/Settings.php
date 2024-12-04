@@ -18,55 +18,59 @@ class Settings extends IComponent {
 	 * @return void
 	 */
 	protected function onSetUp() {
-
+		
 		//  ----------------------------------------
 		//  Defaults
 		//  ----------------------------------------
-
-		$this::s()->options->setDefaultOptions(
-			array(
-				'internal'                      =>  array(
-					'doneUpgradeLegacyOptions'      =>  '0'
-				),
-				'capabilities'                  =>  array(
-					'capCopy'                       =>  'edit_posts',
-					'capAccept'                     =>  'publish_posts',
-					'roleNotification'              =>  'administrator',
-					'excludedEmails'                =>  null
-				),
-				'merging'                       =>  array(
-					'mergeDate'                     =>  '0'
-				),
-				'wpDifferences'                 =>  array(
-					'displayPostTitle'              =>  '1',
-					'displayPostContent'            =>  '1'
-				),
-				'acfDifferences'                =>  array(
-					'markChanges'                   =>  '1',
-					'changeMarkColor'               =>  '#2980b9',
-					'newMarkColor'                  =>  '#27ae60'
-				),
-				'postTypes'                     =>  array(
-					'chosen'                        =>  array(
-						'post'                          =>  '1'
+		
+		add_action('init', function(){
+			
+			$this::s()->options->setDefaultOptions(
+				array(
+					'internal'                      =>  array(
+						'doneUpgradeLegacyOptions'      =>  '0'
+					),
+					'capabilities'                  =>  array(
+						'capCopy'                       =>  'edit_posts',
+						'capAccept'                     =>  'publish_posts',
+						'roleNotification'              =>  'administrator',
+						'excludedEmails'                =>  null
+					),
+					'merging'                       =>  array(
+						'mergeDate'                     =>  '0'
+					),
+					'wpDifferences'                 =>  array(
+						'displayPostTitle'              =>  '1',
+						'displayPostContent'            =>  '1'
+					),
+					'acfDifferences'                =>  array(
+						'markChanges'                   =>  '1',
+						'changeMarkColor'               =>  '#2980b9',
+						'newMarkColor'                  =>  '#27ae60'
+					),
+					'postTypes'                     =>  array(
+						'chosen'                        =>  array(
+							'post'                          =>  '1'
+						)
+					),
+					'notifications'                 =>  array(
+						'whoReceives'                   =>  'all',
+						'type'                          =>  'everySingle',
+						'title'                         =>  __( 'Revision Manager TMC - Accept changes', 'rm_tmc' ),
+						'content'                       =>  wp_remote_retrieve_body( wp_remote_get( $this::s()->getUrl( '/assets/emailTemplates/default_mail.html' ) ) )
+					),
+					'license'                       =>  array(
+						'key'                           =>  null,
+						'keyExpiryDatetime'             =>  null,
+						'lastCheckDatetime'             =>  null,
+						'keyStatus'                     =>  null,
+						'isKeyCorrect'                  =>  false,
+						'domain'                        =>  null
 					)
-				),
-				'notifications'                 =>  array(
-					'whoReceives'                   =>  'all',
-					'type'                          =>  'everySingle',
-					'title'                         =>  __( 'Revision Manager TMC - Accept changes', 'rm_tmc' ),
-					'content'                       =>  wp_remote_retrieve_body( wp_remote_get( $this::s()->getUrl( '/assets/emailTemplates/default_mail.html' ) ) )
-				),
-				'license'                       =>  array(
-					'key'                           =>  null,
-					'keyExpiryDatetime'             =>  null,
-					'lastCheckDatetime'             =>  null,
-					'keyStatus'                     =>  null,
-					'isKeyCorrect'                  =>  false,
-					'domain'                        =>  null
 				)
-			)
-		);
+			);
+			
+		});
 
 		//  ----------------------------------------
 		//  Actions
