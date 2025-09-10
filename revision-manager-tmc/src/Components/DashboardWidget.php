@@ -7,8 +7,8 @@ namespace tmc\revisionmanager\src\Components;
  * Time: 15:31
  */
 
-use shellpress\v1_4_0\src\Shared\Components\IComponent;
-use shellpress\v1_4_0\src\Shared\Front\Models\HtmlElement;
+use shellpress\v1_4_1\src\Shared\Components\IComponent;
+use shellpress\v1_4_1\src\Shared\Front\Models\HtmlElement;
 use tmc\revisionmanager\src\App;
 use WP_Post;
 use WP_Query;

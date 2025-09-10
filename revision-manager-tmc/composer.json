@@ -1,40 +1,49 @@
 {
-    "name" :              "tmc/revisionmanager",
-    "description" :       "Clone your post, page or custom post type to a draft. Draft up revisions of live, published content.",
-    "minimum-stability" : "stable",
-    "license" :           "proprietary",
-    "authors" :           [
+    "name": "tmc/revisionmanager",
+    "description": "Clone your post, page or custom post type to a draft. Draft up revisions of live, published content.",
+    "minimum-stability": "stable",
+    "license": "proprietary",
+    "authors": [
         {
-            "name" :  "Jakub Kuranda",
-            "email" : "jakubkuranda@gmail.com"
+            "name": "Jakub Kuranda",
+            "email": "jakubkuranda@gmail.com"
         }
     ],
-    "repositories" :      [
+    "repositories": [
         {
-            "type" : "vcs",
-            "url" :  "https://github.com/TheMasterCut/ShellPress"
+            "type": "vcs",
+            "url": "https://github.com/TheMasterCut/ShellPress"
         }
     ],
-    "require" :           {
-        "php" :            ">=7.1",
-        "tmc/shellpress" : "dev-master",
-        "ext-json" :       "*"
+    "require": {
+        "php": ">=7.1",
+        "tmc/shellpress": "dev-1_4_1",
+        "ext-json": "*",
+        "johnpbloch/wordpress": "^6.5"
     },
-    "autoload" :          {
-        "psr-4" : {
-            "tmc\\revisionmanager\\" : ""
+    "autoload": {
+        "psr-4": {
+            "tmc\\revisionmanager\\": ""
         }
     },
-    "config" : {
-        "secure-http" : false,
-        "discard-changes": true
+    "config": {
+        "secure-http": false,
+        "discard-changes": true,
+        "vendor-dir": "vendor",
+        "allow-plugins": {
+            "johnpbloch/wordpress-core-installer": true
+        }
     },
     "archive": {
         "exclude": [
             "!vendor/*",
+            "**/vendor-dev",
             "**/node_modules",
             "**/.*",
             "**/*.zip"
         ]
+    },
+    "extra": {
+        "wordpress-install-dir": "vendor-dev/wordpress"
     }
 }

@@ -7,5 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'tmc\\revisionmanager\\' => array($baseDir . '/'),
-    'shellpress\\v1_4_0\\' => array($vendorDir . '/tmc/shellpress'),
+    'shellpress\\v1_4_1\\' => array($vendorDir . '/tmc/shellpress'),
 );

@@ -1,7 +1,7 @@
 <?php
 namespace tmc\revisionmanager\src\Components;
 
-use shellpress\v1_4_0\src\Shared\Components\IComponent;
+use shellpress\v1_4_1\src\Shared\Components\IComponent;
 use WP_Error;
 use WP_REST_Request;
 use WP_REST_Response;

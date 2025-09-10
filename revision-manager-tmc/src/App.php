@@ -7,7 +7,7 @@ namespace tmc\revisionmanager\src;
  * Time: 10:21
  */
 
-use shellpress\v1_4_0\ShellPress;
+use shellpress\v1_4_1\ShellPress;
 use tmc\revisionmanager\src\Components\AdminPage;
 use tmc\revisionmanager\src\Components\DashboardWidget;
 use tmc\revisionmanager\src\Components\AcfDifferences;
@@ -63,10 +63,10 @@ class App extends ShellPress {
         //  ----------------------------------------
         //  Components
         //  ----------------------------------------
-
-        $this->upgrade          = new Upgrade( $this );
-        $this->jetPlugs         = new JetPlugs( $this );
-        $this->settings         = new Settings( $this );
+	    
+	    $this->settings         = new Settings( $this );
+	    $this->upgrade          = new Upgrade( $this );
+	    $this->jetPlugs         = new JetPlugs( $this );
         $this->utilities        = new Utilities( $this );
         $this->notifications    = new Notifications( $this );
         $this->revisions        = new Revisions( $this );

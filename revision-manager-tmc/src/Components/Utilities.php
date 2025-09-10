@@ -2,7 +2,7 @@
 namespace tmc\revisionmanager\src\Components;
 
 use Elementor\Plugin;
-use shellpress\v1_4_0\src\Shared\Components\IComponent;
+use shellpress\v1_4_1\src\Shared\Components\IComponent;
 use tmc\revisionmanager\src\App;
 use WP_Error;
 use WP_Post;

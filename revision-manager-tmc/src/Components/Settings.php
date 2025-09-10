@@ -7,7 +7,7 @@ namespace tmc\revisionmanager\src\Components;
  * Time: 13:03
  */
 
-use shellpress\v1_4_0\src\Shared\Components\IComponent;
+use shellpress\v1_4_1\src\Shared\Components\IComponent;
 use tmc\revisionmanager\src\App;
 
 class Settings extends IComponent {
@@ -23,54 +23,50 @@ class Settings extends IComponent {
 		//  Defaults
 		//  ----------------------------------------
 		
-		add_action('init', function(){
-			
-			$this::s()->options->setDefaultOptions(
-				array(
-					'internal'                      =>  array(
-						'doneUpgradeLegacyOptions'      =>  '0'
-					),
-					'capabilities'                  =>  array(
-						'capCopy'                       =>  'edit_posts',
-						'capAccept'                     =>  'publish_posts',
-						'roleNotification'              =>  'administrator',
-						'excludedEmails'                =>  null
-					),
-					'merging'                       =>  array(
-						'mergeDate'                     =>  '0'
-					),
-					'wpDifferences'                 =>  array(
-						'displayPostTitle'              =>  '1',
-						'displayPostContent'            =>  '1'
-					),
-					'acfDifferences'                =>  array(
-						'markChanges'                   =>  '1',
-						'changeMarkColor'               =>  '#2980b9',
-						'newMarkColor'                  =>  '#27ae60'
-					),
-					'postTypes'                     =>  array(
-						'chosen'                        =>  array(
-							'post'                          =>  '1'
-						)
-					),
-					'notifications'                 =>  array(
-						'whoReceives'                   =>  'all',
-						'type'                          =>  'everySingle',
-						'title'                         =>  __( 'Revision Manager TMC - Accept changes', 'rm_tmc' ),
-						'content'                       =>  wp_remote_retrieve_body( wp_remote_get( $this::s()->getUrl( '/assets/emailTemplates/default_mail.html' ) ) )
-					),
-					'license'                       =>  array(
-						'key'                           =>  null,
-						'keyExpiryDatetime'             =>  null,
-						'lastCheckDatetime'             =>  null,
-						'keyStatus'                     =>  null,
-						'isKeyCorrect'                  =>  false,
-						'domain'                        =>  null
+		$this::s()->options->setDefaultOptions(
+			array(
+				'internal'                      =>  array(
+					'doneUpgradeLegacyOptions'      =>  '0'
+				),
+				'capabilities'                  =>  array(
+					'capCopy'                       =>  'edit_posts',
+					'capAccept'                     =>  'publish_posts',
+					'roleNotification'              =>  'administrator',
+					'excludedEmails'                =>  null
+				),
+				'merging'                       =>  array(
+					'mergeDate'                     =>  '0'
+				),
+				'wpDifferences'                 =>  array(
+					'displayPostTitle'              =>  '1',
+					'displayPostContent'            =>  '1'
+				),
+				'acfDifferences'                =>  array(
+					'markChanges'                   =>  '1',
+					'changeMarkColor'               =>  '#2980b9',
+					'newMarkColor'                  =>  '#27ae60'
+				),
+				'postTypes'                     =>  array(
+					'chosen'                        =>  array(
+						'post'                          =>  '1'
 					)
+				),
+				'notifications'                 =>  array(
+					'whoReceives'                   =>  'all',
+					'type'                          =>  'everySingle',
+					'title'                         =>  'Revision Manager TMC - Accept changes',
+					'content'                       =>  file_get_contents( $this::s()->getPath( '/assets/emailTemplates/default_mail.html' ) )
+				),
+				'license'                       =>  array(
+					'key'                           =>  null,
+					'keyExpiryDatetime'             =>  null,
+					'lastCheckDatetime'             =>  null,
+					'keyStatus'                     =>  null,
+					'isKeyCorrect'                  =>  false,
+					'domain'                        =>  null
 				)
-			);
-			
-		});
+			)
+		);
 
 		//  ----------------------------------------
 		//  Actions

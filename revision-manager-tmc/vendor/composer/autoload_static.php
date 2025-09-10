@@ -17,7 +17,7 @@ class ComposerStaticInit4035297197d46063178eb892d9ff94d9
         ),
         's' => 
         array (
-            'shellpress\\v1_4_0\\' => 18,
+            'shellpress\\v1_4_1\\' => 18,
         ),
     );
 
@@ -26,13 +26,20 @@ class ComposerStaticInit4035297197d46063178eb892d9ff94d9
         array (
             0 => __DIR__ . '/../..' . '/',
         ),
-        'shellpress\\v1_4_0\\' => 
+        'shellpress\\v1_4_1\\' => 
         array (
             0 => __DIR__ . '/..' . '/tmc/shellpress',
         ),
     );
 
     public static $prefixesPsr0 = array (
+        'j' => 
+        array (
+            'johnpbloch\\Composer\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/johnpbloch/wordpress-core-installer/src',
+            ),
+        ),
         'M' => 
         array (
             'Mustache' => 
