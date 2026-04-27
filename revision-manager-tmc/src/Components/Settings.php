@@ -20,6 +20,18 @@ class Settings extends IComponent {
 	protected function onSetUp() {
 		
 		//  ----------------------------------------
+		//  Mail template.
+		//  ----------------------------------------
+		
+		$mailTemplateTransientKey = $this::s()->getPrefix( '_mail_' ) . $this::s()->getPluginVersion();
+		$mailTemplate = get_transient( $mailTemplateTransientKey );
+		
+		if( !$mailTemplate ){
+			$mailTemplate = file_get_contents( $this::s()->getPath( '/assets/emailTemplates/default_mail.html' ) );
+			set_transient( $mailTemplateTransientKey, $mailTemplate );
+		}
+		
+		//  ----------------------------------------
 		//  Defaults
 		//  ----------------------------------------
 		
@@ -55,7 +67,7 @@ class Settings extends IComponent {
 					'whoReceives'                   =>  'all',
 					'type'                          =>  'everySingle',
 					'title'                         =>  'Revision Manager TMC - Accept changes',
-					'content'                       =>  file_get_contents( $this::s()->getPath( '/assets/emailTemplates/default_mail.html' ) )
+					'content'                       =>  $mailTemplate
 				),
 				'license'                       =>  array(
 					'key'                           =>  null,

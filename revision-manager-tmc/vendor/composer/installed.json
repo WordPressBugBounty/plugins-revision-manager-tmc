@@ -179,7 +179,7 @@
             },
             "time": "2023-07-31T17:59:43+00:00",
             "type": "library",
-            "installation-source": "source",
+            "installation-source": "dist",
             "autoload": {
                 "psr-4": {
                     "shellpress\\v1_4_1\\": ""

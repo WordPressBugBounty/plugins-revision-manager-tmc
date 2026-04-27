@@ -101,7 +101,7 @@ class AdminPage extends IComponent {
             'currentUserEmail'          =>  wp_get_current_user()->user_email,
             'wpnonce'                   =>  wp_create_nonce( 'wp_rest' ),
             'hasCode'                   =>  (bool) App::i()->jetPlugs->getCode(),
-            'isCodeActive'           =>  App::i()->jetPlugs->isCodeActive()
+            'isCodeActive'              =>  App::i()->jetPlugs->isCodeActive()
 		);
 		
 	}

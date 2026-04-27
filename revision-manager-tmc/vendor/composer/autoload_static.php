@@ -4,45 +4,45 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit4035297197d46063178eb892d9ff94d9
+class ComposerStaticInit6a9457f511a6f456f9d891f5266afaa6
 {
     public static $files = array (
         'a51ab3661bf8dceef68d3125823c3e2c' => __DIR__ . '/..' . '/tmc/shellpress/src/Shared/Utility/RequirementChecker.php',
     );
 
     public static $prefixLengthsPsr4 = array (
-        't' => 
+        't' =>
         array (
             'tmc\\revisionmanager\\' => 20,
         ),
-        's' => 
+        's' =>
         array (
             'shellpress\\v1_4_1\\' => 18,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'tmc\\revisionmanager\\' => 
+        'tmc\\revisionmanager\\' =>
         array (
             0 => __DIR__ . '/../..' . '/',
         ),
-        'shellpress\\v1_4_1\\' => 
+        'shellpress\\v1_4_1\\' =>
         array (
             0 => __DIR__ . '/..' . '/tmc/shellpress',
         ),
     );
 
     public static $prefixesPsr0 = array (
-        'j' => 
+        'j' =>
         array (
-            'johnpbloch\\Composer\\' => 
+            'johnpbloch\\Composer\\' =>
             array (
                 0 => __DIR__ . '/..' . '/johnpbloch/wordpress-core-installer/src',
             ),
         ),
-        'M' => 
+        'M' =>
         array (
-            'Mustache' => 
+            'Mustache' =>
             array (
                 0 => __DIR__ . '/..' . '/tmc/shellpress/lib/Mustache',
             ),
@@ -56,10 +56,10 @@ class ComposerStaticInit4035297197d46063178eb892d9ff94d9
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit4035297197d46063178eb892d9ff94d9::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit4035297197d46063178eb892d9ff94d9::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit4035297197d46063178eb892d9ff94d9::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit4035297197d46063178eb892d9ff94d9::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit6a9457f511a6f456f9d891f5266afaa6::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit6a9457f511a6f456f9d891f5266afaa6::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit6a9457f511a6f456f9d891f5266afaa6::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit6a9457f511a6f456f9d891f5266afaa6::$classMap;
 
         }, null, ClassLoader::class);
     }
